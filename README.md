@@ -23,15 +23,21 @@ Install with npm
 ```javascript
 // 📂 pages/_app.js
 
-import NextjsTransition from 'react-infinite-logo-slider'
+import React from 'react'
+import NextjsTransition from 'nextjs-page-transitions'
+import { useRouter } from 'next/router'
 
 
 export default function App({ Component, pageProps }) {
+  
+  const router = useRouter()
     
     return (
-        <NextjsTransition>
-            <Component {...pageProps} />
-        </NextjsTransition>
+        <div key={router.route}> // its important to wrap this NextjsTransition with this div passing key router.route
+          <NextjsTransition>
+              <Component {...pageProps} />
+          </NextjsTransition>
+        </div>
     )
 }              
 

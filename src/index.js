@@ -1,25 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { TRANSITIONS } from './utils/TRANSITIONS'
+import routerEvents from 'next-router-events'
 
 const NextjsTransition = ({ 
     children, 
+    router,
     animation = "default",
     duration,
     isCustom = false,
     customAnimation,
 }) => {
 
-    const [keyFramer, setKeyFramer] = useState('/')
+    const [routerApi, setRouterApi] = useState('/')
 
-    useEffect(() => {
-        setKeyFramer(window.location.pathname)
-    }, [])
+    const logUrl = url => {
+        console.log("url change", url)
+        setRouterApi(url)
+    }
+
+    routerEvents.on('routeChangeComplete', logUrl)
     
     return (
         <AnimatePresence mode="wait" >
             <motion.div
-                key={keyFramer}
+                key={routerApi}
                 initial="initialState"
                 animate="animateState"
                 exit="exitState"

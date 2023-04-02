@@ -1,6 +1,6 @@
 {
   "name": "nextjs-page-transitions",
-  "version": "1.0.0",
+  "version": "1.1.3",
   "description": "nextjs-page-transitions is an npm package designed to help you add smooth and dynamic transitions between pages in your Next.js applications.",
   "main": "./build/index.js",
   "scripts": {
@@ -32,16 +32,17 @@
   },
   "dependencies": {
     "framer-motion": "^10.10.0",
+    "next-router-events": "^2.1.0",
     "path": "^0.12.7",
     "prop-types": "^15.8.1",
     "react": "^18.2.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kreudev/react-infinite-logo-slider"
+    "url": "git+https://github.com/kreudev/nextjs-page-transitions"
   },
   "bugs": {
-    "url": "https://github.com/kreudev/react-infinite-logo-slider/issues"
+    "url": "https://github.com/kreudev/nextjs-page-transitions/issues"
   },
-  "homepage": "https://github.com/kreudev/react-infinite-logo-slider#readme"
+  "homepage": "https://github.com/kreudev/nextjs-page-transitions#readme"
 }
